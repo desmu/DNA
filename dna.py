@@ -1,15 +1,11 @@
 import csv
 from sys import argv, exit
-
 arr = []#on initialise le tableau qui va stocker le nombre concécutif maximal de chaque nucléotide pour la séquence argv[2] entrée
-
 db = open(argv[1],"r")
 data = list(csv.reader(db))#ouverture de la base de donnée et stockage dans un tableau à 2 dimensions découpé au niveau des virgules par reader()
 x = data[0]#première ligne correspondante aux séquences
-
 s = open(argv[2],"r")
 seq = s.read()#ouverture et stockage de la base de donnée de la base de donnée lecture
-
 for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de nucléotide
     nbm = 0#nombre d'itération consécutive maximale d'une séquence type dans la séquence analysée
     nb = 0#nombre d'itération consécutive d'une séquence type dans la séquence analysée
