@@ -15,7 +15,7 @@ for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de
     nb = 0#nombre d'itération consécutive d'une séquence type dans la séquence analysée
     prec = 0#indice de la séquence précédente
     a = 0#indice de la position de la boucle dans l'analyse de la grande séquence
-    #ici while est chisi car for in range avance de 1 en 1 sans tenir compte des modifications de a dans l'action de la boucle 
+    #ici while est chisi car for in range avance de 1 en 1 sans tenir compte des modifications de a dans l'action de la boucle
     #avec for arr retournerait [2,2,2,2,2,2,2,2]
     while a < len(seq):#on scanne toute la séquence à la recherche du nombre maximal consécutif de la séquence type "i" que l'on est entrain de chercher
         a = seq.find(x[i], a)#on retourne la position de l'itération suivante de la séquence type "i" recherchée en partant de "a"
@@ -40,9 +40,12 @@ for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de
         a += 1#on passe au rang suivant dans la séquence analysée
     arr.append(nbm)#on inserre le nombre de la plus longue chaîne consécutive de la séquence analysée
 arr = list(map(str, arr))#change le tableau de valeurs int en string pour que celui-ci puisse être comparé aux montants inscrits dans la base de donnée pour chaque personne
-data.pop(0)#on retire la ligne correspondant aux séquences types de nucléotides
-for i in data:#pour chaque ligne de la base de données
-    if i[1:] == arr:#si toute la ligne de valeurs max vaut celle de "arr"/1 pour exclure le nom
-        print("C'est : ",i[0])#c'est lui
+#data.pop(0)#on retire la ligne correspondant aux séquences types de nucléotides
+i=1
+while i < len(data):#pour chaque ligne de la base de données
+    if data[i][1:] == arr:#si toute la ligne de valeurs max vaut celle de "arr"
+        print("C'est : ",data[i][0])#c'est lui
+        i+=1
     else:
-        print("Ce n'est pas : ",i[0])#sinon : ce n'est pas lui
+        print("Ce n'est pas : ",data[i][0])#sinon : ce n'est pas lui
+        i+=1
