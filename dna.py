@@ -1,16 +1,20 @@
-import csv
-from sys import argv, exit
+import csv#bibliothèque pour l'édition de documents csv
+from sys import argv#bibliothèque de gestion d'arguments en ligne de commande
+
 arr = []#on initialise le tableau qui va stocker le nombre concécutif maximal de chaque nucléotide pour la séquence argv[2] entrée
+
 db = open(argv[1],"r")
 data = list(csv.reader(db))#ouverture de la base de donnée et stockage dans un tableau à 2 dimensions découpé au niveau des virgules par reader()
 x = data[0]#première ligne correspondante aux séquences
+
 s = open(argv[2],"r")
 seq = s.read()#ouverture et stockage de la base de donnée de la base de donnée lecture
+
 for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de nucléotide
     nbm = 0#nombre d'itération consécutive maximale d'une séquence type dans la séquence analysée
     nb = 0#nombre d'itération consécutive d'une séquence type dans la séquence analysée
-    a = 0#indice de la position de la boucle dans l'analyse de la grande séquence
     prec = 0#indice de la séquence précédente
+    a = 0#indice de la position de la boucle dans l'analyse de la grande séquence
     while a < len(seq):#on scanne toute la séquence à la recherche du nombre maximal consécutif de la séquence type "i" que l'on est entrain de chercher
         a = seq.find(x[i], a)#on retourne la position de l'itération suivante de la séquence type "i" recherchée
         if a == -1: #retourne -1 si non trouvé/si aucune itération de la séquence cherchée à partir de "a" n'est trouvée
@@ -34,7 +38,6 @@ for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de
         a += 1
     arr.append(nbm)#on inserre le nombre de la plus longue chaîne consécutive de la séquence analysée
 arr = list(map(str, arr))#change le tableau de valeurs int en string pour que celui-ci puisse être comparé aux montants inscrits dans la base de donnée pour chaque personne
-#make a new list to preserve reader
 data.pop(0)#on retire la ligne correspondant aux séquences types de nucléotides
 for i in data:#pour chaque ligne de la base de données
     if i[1:] == arr:#si toute la ligne de valeurs max vaut celle de "arr"
