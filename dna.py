@@ -16,7 +16,7 @@ for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de
     prec = 0#indice de la séquence précédente
     a = 0#indice de la position de la boucle dans l'analyse de la grande séquence
     while a < len(seq):#on scanne toute la séquence à la recherche du nombre maximal consécutif de la séquence type "i" que l'on est entrain de chercher
-        a = seq.find(x[i], a)#on retourne la position de l'itération suivante de la séquence type "i" recherchée
+        a = seq.find(x[i], a)#on retourne la position de l'itération suivante de la séquence type "i" recherchée en partant de "a"
         if a == -1: #retourne -1 si non trouvé/si aucune itération de la séquence cherchée à partir de "a" n'est trouvée
             nb = 0#réinitialisation
             break#fin de l'analyse pour la séquence "i"
