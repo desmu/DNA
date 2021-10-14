@@ -42,7 +42,7 @@ for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de
 arr = list(map(str, arr))#change le tableau de valeurs int en string pour que celui-ci puisse être comparé aux montants inscrits dans la base de donnée pour chaque personne
 data.pop(0)#on retire la ligne correspondant aux séquences types de nucléotides
 for i in data:#pour chaque ligne de la base de données
-    if i[1:] == arr:#si toute la ligne de valeurs max vaut celle de "arr"
+    if i[1:] == arr:#si toute la ligne de valeurs max vaut celle de "arr"/1 pour exclure le nom
         print("C'est : ",i[0])#c'est lui
     else:
         print("Ce n'est pas : ",i[0])#sinon : ce n'est pas lui
