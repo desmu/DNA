@@ -35,7 +35,7 @@ for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de
                 prec = a#nb d'itération est assigné au max à retourner dans le tableau arr
                 #prec étant != 0 ce n'est pas la première occurence de la séquence type recherchée "nbm" est donc forcément >= nb
                 #donc pas d'assignation au max à retourner
-        a += 1
+        a += 1#on passe au rang suivant dans la séquence analysée
     arr.append(nbm)#on inserre le nombre de la plus longue chaîne consécutive de la séquence analysée
 arr = list(map(str, arr))#change le tableau de valeurs int en string pour que celui-ci puisse être comparé aux montants inscrits dans la base de donnée pour chaque personne
 data.pop(0)#on retire la ligne correspondant aux séquences types de nucléotides
