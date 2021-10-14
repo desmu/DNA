@@ -40,7 +40,7 @@ for i in range(1,len(x)):#on passe une fois dans la boucle pour chaque groupe de
         a += 1#on passe au rang suivant dans la séquence analysée
     arr.append(nbm)#on inserre le nombre de la plus longue chaîne consécutive de la séquence analysée
 arr = list(map(str, arr))#change le tableau de valeurs int en string pour que celui-ci puisse être comparé aux montants inscrits dans la base de donnée pour chaque personne
-i=1
+i=1#on saute la première ligne qui initialise les séquences types de nucléotides
 while i < len(data):#pour chaque ligne de la base de données
     if data[i][1:] == arr:#si toute la ligne de valeurs max vaut celle de "arr"
         print("C'est : ",data[i][0])#c'est lui
